@@ -1,7 +1,11 @@
 from __future__ import unicode_literals
 
 from django import template
-from django.core.urlresolvers import reverse, NoReverseMatch
+try:
+    from django.urls import NoReverseMatch, reverse
+except:
+    # Fallback for Django <= 1.9
+    from django.core.urlresolvers import NoReverseMatch, reverse
 from markitup import settings
 from markitup.util import absolute_url
 from markitup.fields import render_func
