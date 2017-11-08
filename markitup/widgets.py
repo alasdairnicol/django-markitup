@@ -130,7 +130,7 @@ class MarkItUpWidget(CompatMixin, MarkupTextarea):
     def render(self, name, value, attrs=None):
         html = super(MarkItUpWidget, self).render(name, value, attrs)
 
-        base_attrs = self.build_attrs(attrs, type=self.input_type, name=name)
+        base_attrs = self.build_attrs(attrs, name=name)
         final_attrs = self.build_attrs_compat(base_attrs, attrs)
 
         try:
